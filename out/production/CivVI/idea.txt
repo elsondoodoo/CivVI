@@ -1,0 +1,45 @@
+Civ VI beta
+
+generate random map of hexagon grids, each hexagon has different terrain:
+
+grassland (gives 1 rice, movement cost 1)
+
+forest (gives 1 wood, movement cost 2)
+
+mountain (gives 1 stone, movement cost 2)
+
+players can build cities, cities grow (10 * population multiplier) population from each rice on adjacent grassland tiles within a 3 hexagon radius per turn
+
+for each 2 population, the city can generate (1 * market multiplier) gold per turn
+
+for each 50 population, the city can generate (1 * monument multiplier) culture per turn
+
+for each 50 population, the city can generate (1 * library multiplier) science per turn
+
+for each 100 population, the city can upgrade 1 level
+
+Cities can generate troops, which can move around the map and be used to attack other cities and troops:
+
+types of troops: 
+
+Scouts (1 range, 2 damage, 10 health, 5 movement, 20 gold cost (instantly trians) or takes (3 - city level) turns), 
+soldiers (1 range, 5 damage, 10 health, 3 movement,50 gold cost (instantly trians) or takes (5 - city level) turns), 
+archers (2 range, 3 damage, 5 health, 2 movement, 70 gold cost (instantly trians) or takes (7 - city level) turns)
+
+players can upgrade cities with buildings, with each building giving different effects
+
+Monument: built with 200 stone and 50 wood, which gives population multiplier = 1.2 and culture multiplier = 1.5
+
+Market: built with 100 wood and 200 rice, which gives population multiplier = 1.2 and gold multiplier = 1.5
+
+Library: built with 100 wood, 50 rice and 100 stone, which gives population multiplier = 1.2 and science multiplier = 1.5
+
+Three ways to win:
+
+1. Culture: have the most culture by the end of 30 turns
+2. Science: have the most science by the end of 30 turns
+3. War: be the first to destroy all other cities
+
+
+
+

@@ -1,0 +1,10 @@
+make each tile a 6 x 6 hexagon
+make each hexagon have a 100 x 100 pixel size
+make each hexagon have a 10 pixel margin
+make each hexagon have a 10 pixel padding
+
+represent grassland as a hexagon with a light green color with "." as the texture
+represent mountain as a hexagon with a gray color with "^" as the texture
+represent forest as a hexagon with a dark green color with "*" as the texture
+
+

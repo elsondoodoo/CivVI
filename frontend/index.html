@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civilization VI Beta</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Top HUD Bar -->
+        <div class="top-hud">
+            <div class="turn-info">
+                <span id="turn-counter">Turn: 1</span>
+                <span id="player-turn">Player 1's Turn</span>
+            </div>
+            <div class="resources">
+                <div class="resource" title="Rice">
+                    <img src="icons/rice.png" alt="Rice">
+                    <span id="rice-amount">100</span>
+                </div>
+                <div class="resource" title="Wood">
+                    <img src="icons/wood.png" alt="Wood">
+                    <span id="wood-amount">100</span>
+                </div>
+                <div class="resource" title="Stone">
+                    <img src="icons/stone.png" alt="Stone">
+                    <span id="stone-amount">100</span>
+                </div>
+                <div class="resource" title="Gold">
+                    <img src="icons/gold.png" alt="Gold">
+                    <span id="gold-amount">100</span>
+                </div>
+                <div class="resource" title="Culture">
+                    <img src="icons/culture.png" alt="Culture">
+                    <span id="culture-amount">0</span>
+                </div>
+                <div class="resource" title="Science">
+                    <img src="icons/science.png" alt="Science">
+                    <span id="science-amount">0</span>
+                </div>
+            </div>
+            <button id="end-turn-btn">End Turn</button>
+        </div>
+
+        <!-- Main Game Area -->
+        <div class="game-area">
+            <!-- Left Panel - City & Troop List -->
+            <div class="left-panel">
+                <div class="panel-section cities-list">
+                    <h3>Cities</h3>
+                    <div class="city-item selected">
+                        <div class="city-name">Player 1's City 1</div>
+                        <div class="city-details">Level 1 • Pop: 10 • Health: 50</div>
+                        <div class="city-buildings">Buildings: None</div>
+                    </div>
+                </div>
+                <div class="panel-section troops-list">
+                    <h3>Troops</h3>
+                    <div class="troop-item">
+                        <div class="troop-type">Scout</div>
+                        <div class="troop-location">Location: (5,5)</div>
+                        <div class="troop-status">Health: 10/10 • Moves: 5/5</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center Panel - Map View -->
+            <div class="center-panel">
+                <div class="hex-grid">
+                    <!-- Hexagon grid would be generated here -->
+                    <div class="hex-row">
+                        <div class="hexagon grassland"></div>
+                        <div class="hexagon forest"></div>
+                        <div class="hexagon mountain"></div>
+                        <!-- More hexagons... -->
+                    </div>
+                    <!-- More rows... -->
+                </div>
+            </div>
+
+            <!-- Right Panel - Actions -->
+            <div class="right-panel">
+                <div class="panel-section actions">
+                    <h3>Actions</h3>
+                    <button class="action-btn" id="build-btn">Build/Upgrade City</button>
+                    <button class="action-btn" id="train-btn">Train Troops</button>
+                    <button class="action-btn" id="move-btn">Move Troops</button>
+                    
+                    <div class="submenu" id="build-submenu">
+                        <h4>Build Options</h4>
+                        <button class="sub-action-btn" id="monument-btn">
+                            Monument<br>
+                            <small>200 stone, 50 wood</small><br>
+                            <small>+20% population, +50% culture</small>
+                        </button>
+                        <button class="sub-action-btn" id="market-btn">
+                            Market<br>
+                            <small>100 wood, 200 rice</small><br>
+                            <small>+20% population, +50% gold</small>
+                        </button>
+                        <button class="sub-action-btn" id="library-btn">
+                            Library<br>
+                            <small>100 wood, 50 rice, 100 stone</small><br>
+                            <small>+20% population, +50% science</small>
+                        </button>
+                    </div>
+                    
+                    <div class="submenu" id="train-submenu">
+                        <h4>Train Troops</h4>
+                        <button class="sub-action-btn" id="scout-btn">
+                            Scout<br>
+                            <small>20 gold or 3 turns</small><br>
+                            <small>Health: 10, Damage: 2, Range: 1, Movement: 5</small>
+                        </button>
+                        <button class="sub-action-btn" id="soldier-btn">
+                            Soldier<br>
+                            <small>50 gold or 5 turns</small><br>
+                            <small>Health: 10, Damage: 5, Range: 1, Movement: 3</small>
+                        </button>
+                        <button class="sub-action-btn" id="archer-btn">
+                            Archer<br>
+                            <small>70 gold or 7 turns</small><br>
+                            <small>Health: 5, Damage: 3, Range: 2, Movement: 2</small>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="panel-section game-info">
+                    <h3>Game Information</h3>
+                    <div id="game-log">
+                        <div class="log-entry">Game started. Player 1's turn.</div>
+                        <div class="log-entry">Player 1's City 1 founded.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>

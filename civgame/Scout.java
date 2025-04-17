@@ -1,7 +1,4 @@
 
-## 10. Scout.java
-
-```java
 package civgame;
 
 public class Scout extends Troop {
@@ -15,4 +12,3 @@ public class Scout extends Troop {
         this.type = TroopType.SCOUT;
     }
 }
-```

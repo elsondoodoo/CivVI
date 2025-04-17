@@ -1,0 +1,285 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #222;
+    color: #eee;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Top HUD Bar */
+.top-hud {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    border-bottom: 2px solid #555;
+    height: 60px;
+}
+
+.turn-info {
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}
+
+.resources {
+    display: flex;
+    gap: 20px;
+}
+
+.resource {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.resource img {
+    width: 24px;
+    height: 24px;
+    background-color: #444;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+#end-turn-btn {
+    background-color: #4a7;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#end-turn-btn:hover {
+    background-color: #3b6;
+}
+
+/* Main Game Area */
+.game-area {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Left Panel */
+.left-panel {
+    width: 250px;
+    background-color: #2a2a2a;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.panel-section {
+    background-color: #333;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.panel-section h3 {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 5px;
+}
+
+.city-item, .troop-item {
+    background-color: #3a3a3a;
+    border-radius: 4px;
+    padding: 8px;
+    margin-bottom: 8px;
+}
+
+.city-item.selected {
+    border: 2px solid #4a7;
+}
+
+.city-name, .troop-type {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.city-details, .troop-location, .troop-status, .city-buildings {
+    font-size: 12px;
+    color: #ccc;
+    margin-top: 2px;
+}
+
+/* Center Panel - Map */
+.center-panel {
+    flex: 1;
+    background-color: #1a1a1a;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hex-grid {
+    position: relative;
+}
+
+.hex-row {
+    display: flex;
+    margin-bottom: -15px; /* Overlap rows */
+}
+
+.hex-row:nth-child(even) {
+    margin-left: 52px; /* Offset even rows */
+}
+
+.hexagon {
+    width: 100px;
+    height: 110px;
+    margin: 0 2px;
+    position: relative;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    cursor: pointer;
+}
+
+.grassland {
+    background-color: #7bbd5e;
+    position: relative;
+}
+
+.grassland::after {
+    content: ".";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: #5a8f43;
+}
+
+.forest {
+    background-color: #3a7a41;
+    position: relative;
+}
+
+.forest::after {
+    content: "*";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: #255f2c;
+}
+
+.mountain {
+    background-color: #8c8c8c;
+    position: relative;
+}
+
+.mountain::after {
+    content: "^";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: #676767;
+}
+
+/* Right Panel */
+.right-panel {
+    width: 300px;
+    background-color: #2a2a2a;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.action-btn {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 8px;
+    width: 100%;
+    text-align: left;
+}
+
+.action-btn:hover {
+    background-color: #666;
+}
+
+.submenu {
+    display: none;
+    background-color: #444;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.submenu h4 {
+    margin-bottom: 8px;
+    color: #aaa;
+}
+
+.sub-action-btn {
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 6px;
+    width: 100%;
+    text-align: center;
+}
+
+.sub-action-btn:hover {
+    background-color: #444;
+}
+
+.sub-action-btn small {
+    color: #aaa;
+}
+
+.game-info {
+    flex: 1;
+}
+
+#game-log {
+    background-color: #222;
+    padding: 8px;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.log-entry {
+    font-size: 12px;
+    margin-bottom: 4px;
+    color: #bbb;
+}
+
+/* Placeholder for missing icons */
+[alt="Rice"] { background-color: #e5c100 !important; }
+[alt="Wood"] { background-color: #8b4513 !important; }
+[alt="Stone"] { background-color: #888 !important; }
+[alt="Gold"] { background-color: #ffdf00 !important; }
+[alt="Culture"] { background-color: #a020f0 !important; }
+[alt="Science"] { background-color: #1e90ff !important; }
